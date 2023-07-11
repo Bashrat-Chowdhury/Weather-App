@@ -14,9 +14,17 @@ N/A
 
 When the user first lands on the weather app, they will see a search box to put in their city and an empty box with current weather and future forecast Furthermore, they will see their search history if they have used the app previously:
 
+<img width="545" alt="landing page weather" src="https://github.com/Bashrat-Chowdhury/weather-app/assets/133437739/c7f9fe30-471b-4450-9971-055cd3540df5">
+
 The user will see the following page with the current and future weather conditions:
 
+<img width="544" alt="searched weather page" src="https://github.com/Bashrat-Chowdhury/weather-app/assets/133437739/df8648f5-b58f-4ba3-a425-3d134fe83a71">
+
+
 The users past searches are saved in local storage and they can click on the displayed list of past searches to access the weather for that city:
+
+![local storage](https://github.com/Bashrat-Chowdhury/weather-app/assets/133437739/01cd7237-16c9-44d7-85de-aecae0e25a0f)
+
 
 ## Credits
 
