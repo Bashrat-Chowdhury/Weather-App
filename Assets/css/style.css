@@ -179,3 +179,39 @@ p {
     flex: 0 0 calc(100% * 8 / 12 - 2%);
   }
 }
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  padding-left: 10 px;
+}
+
+span {
+  margin-bottom: 10px;
+}
+
+.city-name {
+  margin-bottom: 10px;
+}
+
+#currentweather {
+  margin-bottom: 20px;
+  border: solid;
+}
+
+.futureweather {
+  /* flex: 0 0 100%; */
+  border: solid;
+}
+
+#day-containers {
+  display: flex;
+  flex-direction: row;
+}
+
+.day-container {
+  margin-right: 10px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  border: solid;
+}
