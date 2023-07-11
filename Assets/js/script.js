@@ -9,6 +9,7 @@ var currentContainerEl = document.querySelector("#currentweather");
 var currentDateEl = document.querySelector("#date");
 var currentIconEl = document.querySelector("#currentWeatherIcon");
 var pastSearchesList = document.querySelector("#pastSearches");
+pastSearchesList.style.listStyleType = "none";
 
 //Function to take user input
 

@@ -14,6 +14,7 @@
 nav {
   background-color: var(--dark);
   display: flex;
+  justify-content: center;
   color: beige;
 }
 
@@ -103,6 +104,10 @@ p {
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
+  padding-top: 10px;
+  padding-left: 20px;
+  font-weight: bolder;
+  line-height: 30px;
 }
 
 .card-header {
