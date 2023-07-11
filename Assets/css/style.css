@@ -215,3 +215,7 @@ span {
   margin-bottom: 10px;
   border: solid;
 }
+
+li:hover {
+  cursor: pointer;
+}

@@ -8,6 +8,7 @@ var dayContainersEl = document.querySelector("#day-containers");
 var currentContainerEl = document.querySelector("#currentweather");
 var currentDateEl = document.querySelector("#date");
 var currentIconEl = document.querySelector("#currentWeatherIcon");
+var pastSearchesList = document.querySelector("#pastSearches");
 
 //Function to take user input
 
@@ -18,7 +19,25 @@ var formSubmitHandler = function (event) {
   var city = cityInputEl.value.trim();
 
   // Save the search term to local storage
-  //saveSearchTerm(city);
+  saveSearchTerm(city);
+
+  if (city) {
+    getLongLat(city);
+    return;
+  }
+
+  return;
+};
+
+var formSubmitHandlerList = function (event) {
+  console.log("clicked handler");
+  console.log(event);
+  clearResults();
+  console.log("clicked handler after preventy default");
+  var city = event;
+
+  // Save the search term to local storage
+  saveSearchTerm(city);
 
   if (city) {
     getLongLat(city);
@@ -167,4 +186,51 @@ var displayWeather = function (weather) {
   }
 };
 
+// Function to save the search term to local storage
+function saveSearchTerm(searchTerm) {
+  // Retrieve existing search terms from local storage
+  const existingSearchTerms = getSearchTerms();
+
+  // Add the new search term to the existing ones
+  existingSearchTerms.push(searchTerm);
+
+  // Save the updated search terms to local storage
+  localStorage.setItem("searchTerms", JSON.stringify(existingSearchTerms));
+
+  // Update the displayed past searches
+  displayPastSearches();
+}
+// Function to retrieve the saved search terms from local storage
+function getSearchTerms() {
+  const storedSearchTerms = localStorage.getItem("searchTerms");
+  return storedSearchTerms ? JSON.parse(storedSearchTerms) : [];
+}
+
+// Function to display the past searches
+function displayPastSearches() {
+  // Clear the existing list
+  pastSearchesList.innerHTML = "";
+
+  // Retrieve the saved search terms
+  const searchTerms = getSearchTerms();
+
+  // Create list items for each search term
+  searchTerms.forEach((searchTerm) => {
+    const listItem = document.createElement("li");
+    listItem.classList.add("highlight");
+
+    listItem.textContent = searchTerm;
+
+    // Attach a click event listener to the list item
+    listItem.addEventListener("click", () => {
+      console.log("clicked");
+      formSubmitHandlerList(searchTerm);
+    });
+
+    // Append the list item to the past searches list
+    pastSearchesList.appendChild(listItem);
+  });
+}
+
 userFormEl.addEventListener("submit", formSubmitHandler);
+displayPastSearches();
