@@ -59,7 +59,7 @@ function clearResults() {
 //Function to fetch city long-lat
 var getLongLat = function (city) {
   var apiUrl =
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/geo/1.0/direct?q=" +
     city +
     "&limit=5&appid=6201ea899f467d1644aea975f74d08f9";
 
@@ -216,6 +216,7 @@ function displayPastSearches() {
   const searchTerms = getSearchTerms();
 
   // Create list items for each search term
+
   searchTerms.forEach((searchTerm) => {
     const listItem = document.createElement("li");
     listItem.classList.add("highlight");
